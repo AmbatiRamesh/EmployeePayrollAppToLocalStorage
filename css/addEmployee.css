@@ -92,12 +92,14 @@ label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
+
 .text {
     font-size: 16px;
     color: #42515f;
     opacity: 1;
     font-family: Roboto;
 }
+
 .input {
     width: 100%;
     padding: 12px;
@@ -105,17 +107,20 @@ label {
     border-radius: 4px;
     resize: vertical;
 }
+
 .profile-radio.content {
     display: flex;
     flex-direction: row;
 
 }
+
 .profile-radio.content>label {
     display: flex;
     flex-direction: row;
     align-items: center;
 
 }
+
 .profile {
     width: 40px;
     border-radius: 50%;
@@ -136,6 +141,7 @@ select{
     margin-bottom: 10px;
     justify-content: space-between;
     margin-top: 20px;
+
 }
 .button{
     font-size: 17px;
@@ -157,6 +163,8 @@ select{
     border-radius: 8px;
     background-color: #f5f5f5;
     margin-right: 30px;
+
+
 }
 .cancelButton{
     text-decoration: none;
@@ -195,6 +203,8 @@ select{
     }
     .submitButton{
         margin: 0;
+
+
     }
     .buttonParent{
         flex-direction: column-reverse;
