@@ -60,16 +60,16 @@ class EmployeePayrollData{
          this._note = note; 
      }
  
-     get satrtDate(){
+     get startDate(){
          return this._startDate;
      }
-     set satrtDate(satrtDate){
-         this._startDate = satrtDate;
+     set startDate(startDate){
+         this._startDate = startDate;
      }
      //method
      toString(){
          const options = {year : 'numeric', month: 'long', day:'numeric'};
-         const empDate = !this.satrtDate ?"undefined": this.satrtDate.toLocaleDateString("en-US",options);
+         const empDate = !this.startDate ?"undefined": this.startDate.toLocaleDateString("en-US",options);
  
          return "id=" + this.id +" ,name = " + this.name + ",gender=" + this.gender + ",profilePic=" + this.profilePic + ",department=" + this.department +",salary=" + this.salary + ",startDate = " + empDate + ",note=" +this.note;
         }
@@ -140,7 +140,7 @@ class EmployeePayrollData{
          setTextValue('.text-error',e);
          throw e;
      }
- 
+
      employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
      employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
      employeePayrollData.department = getSelectedValues('[name=department]');
@@ -170,3 +170,30 @@ class EmployeePayrollData{
      let value = document.getElementById(id).value;
      return value;
  }
+ const resetForm = () => {
+    setValue('#name','');
+    unsetSelectedValues('[name=profile]');
+    unsetSelectedValues('[name=gender]');
+    unsetSelectedValues('[name=department]');
+    setValue('#salary','');
+    setValue('#notes','');
+    setValue('#day','1');
+    setValue('#month','January');
+    setValue('#year','2020');
+}
+const unsetSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        item.checked = false;
+    });
+}
+
+const setTextValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
